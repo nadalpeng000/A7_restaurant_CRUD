@@ -2,7 +2,9 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
 const mongoose = require('mongoose')
+const restaurant = require('./models/restaurant')
 const app = express()
+const Restaurant = require('./models/restaurant')
 
 // connect mongDB by mongoose
 if (process.env.NODE_ENV !== 'production') {
@@ -26,7 +28,10 @@ app.set('view engine', 'hbs')
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-  res.render('index')
+  Restaurant.find()
+    .lean()
+    .then(restaurants => res.render('index', { restaurants }))
+    .catch(error => console.log(error))
 })
 
 app.listen(3000, () => {
