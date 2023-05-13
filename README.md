@@ -11,7 +11,7 @@
 
 1.開啟終端機(Terminal)cd 到存放專案本機位置並執行:
 ```
-git clone https://github.com/nadalpeng000/A1_restaurantlist.git
+git clone https://github.com/nadalpeng000/A7_restaurant_CRUD.git
 ```
 
 2.切至專案資料夾安裝套件
@@ -28,7 +28,7 @@ run by nodemon
 ```
 npm run dev 
 ```
-
+![image](https://github.com/nadalpeng000/A7_restaurant_CRUD/blob/main/%E6%93%B7%E5%8F%96.PNG)
 
 ### 使用工具
 Visual Studio Code - 開發環境
