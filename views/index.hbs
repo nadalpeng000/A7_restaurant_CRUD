@@ -50,17 +50,29 @@
 
 
 
-            <div>
-              <span class="badge badge-pill badge-danger font-weight-normal">
-                {{this.rating}}
-                <i class="fas fa-star fa-xs"></i>
-              </span>
-              <a href="/restaurant/{{this._id}}/edit" class="btn btn-secondary"
-                style="--bs-btn-padding-y: .05rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">edit</a>
-              <a href="/restaurants/{{this._id}}" class="btn btn-secondary"
-                style="--bs-btn-padding-y: .05rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">detail</a>
-              <a href="/" class="btn btn-secondary"
-                style="--bs-btn-padding-y: .05rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">delete</a>
+            <div class="d-flex justify-content-between">
+              <form>
+                <div class="badge badge-pill badge-danger font-weight-normal"
+                  style="--bs-btn-padding-y: .05rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                  {{this.rating}}
+                  <i class="fas fa-star fa-xs"></i>
+                </div>
+              </form>
+
+              <div class="d-flex">
+                <form class="mx-1">
+                  <a href="/restaurants/{{this._id}}/edit" class="btn btn-secondary"
+                    style="--bs-btn-padding-y: .05rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">edit</a>
+                </form>
+                <form class="mx-1">
+                  <a href="/restaurants/{{this._id}}" class="btn btn-secondary"
+                    style="--bs-btn-padding-y: .05rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">detail</a>
+                </form>
+                <form action="/restaurants/{{this._id}}/delete" method="POST" class="mx-1">
+                  <button type="submit" class="btn btn-secondary"
+                    style="--bs-btn-padding-y: .05rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">delete</button>
+                </form>
+              </div>
             </div>
           </div>
         </div>

@@ -58,7 +58,7 @@ app.get('/restaurants/:id', (req,res) => {
 })
 
 // edit restaurant
-app.get('/restaurant/:id/edit', (req,res) => {
+app.get('/restaurants/:id/edit', (req,res) => {
   const id = req.params.id
   return Restaurant.findById(id)
   .lean()
@@ -79,6 +79,15 @@ app.post('/restaurants/:id/edit', (req,res) => {
     restaurant.description = req.body.description
     return restaurant.save()
   })
+  .then(() => res.redirect('/'))
+  .catch(error => console.log(error))
+})
+
+// delete restaurant
+app.post('/restaurants/:id/delete', (req,res) => {
+  const id = req.params.id
+  return Restaurant.findById(id)
+  .then(restaurant => restaurant.remove())
   .then(() => res.redirect('/'))
   .catch(error => console.log(error))
 })
