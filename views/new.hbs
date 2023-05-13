@@ -1,0 +1,83 @@
+<div class="container py-5">
+
+  <div class="row">
+    <div class="col-12 col-lg-10 col-xl-8 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">新增餐廳清單</h5>
+          <hr>
+          <form method="POST" action="/restaurants">
+            <div class="row mb-3 g-2">
+              <label class="col-md-4 col-form-label">
+                店名
+              </label>
+              <div class="col-md-8">
+                <input type="text" placeholder="name" name="name" required>
+              </div>
+            </div>
+
+            <div class="row mb-3 g-2">
+              <label class="col-md-4 col-form-label">
+                類別
+              </label>
+              <div class="col-md-8">
+                <input type="text" placeholder="catrgory" name="catrgory">
+              </div>
+            </div>
+
+            <div class="row mb-3 g-2">
+              <label class="col-md-4 col-form-label">
+                圖片網址
+              </label>
+              <div class="col-md-8">
+                <input type="text" placeholder="image link" name="image">
+              </div>
+            </div>
+
+            <div class="row mb-3 g-2">
+              <label class="col-md-4 col-form-label">
+                評分
+              </label>
+              <div class="col-md-8">
+                <input type="number" step = "0.1" name="rating" class="form-control" id="rating" min="0" max="5">
+              </div>
+            </div>
+
+            <div class="row mb-3 g-2">
+              <label class="col-md-4 col-form-label">
+                地址
+              </label>
+              <div class="col-md-8">
+                <input type="text" placeholder="location" name="location">
+              </div>
+            </div>
+
+            <div class="row mb-3 g-2">
+              <label class="col-md-4 col-form-label">
+                電話
+              </label>
+              <div class="col-md-8">
+                <input type="text" placeholder="phone" name="phone">
+              </div>
+            </div>
+
+            <div class="row mb-3 g-2">
+              <label class="col-md-4 col-form-label">
+                餐廳簡介
+              </label>
+              <div class="col-md-8">
+                <input type="text" placeholder="description" name="description">
+              </div>
+            </div>
+            
+
+
+            <button class="btn btn-success" type="submit">Create</button>
+            <a class="btn btn-success" href="/">Back</a>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
