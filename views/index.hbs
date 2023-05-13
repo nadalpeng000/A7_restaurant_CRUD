@@ -39,23 +39,31 @@
       <div class="row row-cols-sm-3">
         {{!-- example --}}
         {{#each restaurants}}
-        <a href="/restaurants/{{this._id}}" class="text-secondary">
-          <div class="card mb-3">
-            <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}">
-            <div class="card-body p-3">
-              <h6 class="card-title mb-1">{{this.name}}</h6>
+        <div class="card mb-3">
+          <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}">
+          <div class="card-body p-3">
+            <h6 class="card-title mb-1">{{this.name}}</h6>
 
-              <div class="restaurant-category mb-1">
-                <i class="fas fa-utensils pr-2">{{this.category}}</i>
-              </div>
+            <div class="restaurant-category mb-1">
+              <i class="fas fa-utensils pr-2">{{this.category}}</i>
+            </div>
 
+
+
+            <div>
               <span class="badge badge-pill badge-danger font-weight-normal">
                 {{this.rating}}
                 <i class="fas fa-star fa-xs"></i>
               </span>
-
+              <a href="/restaurant/{{this._id}}/edit" class="btn btn-secondary"
+                style="--bs-btn-padding-y: .05rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">edit</a>
+              <a href="/restaurants/{{this._id}}" class="btn btn-secondary"
+                style="--bs-btn-padding-y: .05rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">detail</a>
+              <a href="/" class="btn btn-secondary"
+                style="--bs-btn-padding-y: .05rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">delete</a>
             </div>
           </div>
+        </div>
         </a>
         {{/each}}
       </div>

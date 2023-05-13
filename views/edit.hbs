@@ -1,0 +1,83 @@
+<div class="container py-5">
+
+  <div class="row">
+    <div class="col-12 col-lg-10 col-xl-8 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">修改資料</h5>
+          <hr>
+          <form method="POST" action="/restaurants/{{restaurant._id}}/edit">
+            <div class="row mb-3 g-2">
+              <label class="col-md-4 col-form-label">
+                店名
+              </label>
+              <div class="col-md-8">
+                <input type="text" placeholder="name" name="name" value="{{restaurant.name}}">
+              </div>
+            </div>
+
+            <div class="row mb-3 g-2">
+              <label class="col-md-4 col-form-label">
+                類別
+              </label>
+              <div class="col-md-8">
+                <input type="text" placeholder="category" name="category" value="{{restaurant.category}}">
+              </div>
+            </div>
+
+            <div class="row mb-3 g-2">
+              <label class="col-md-4 col-form-label">
+                圖片網址
+              </label>
+              <div class="col-md-8">
+                <input type="text" placeholder="image link" name="image" value="{{restaurant.image}}">
+              </div>
+            </div>
+
+            <div class="row mb-3 g-2">
+              <label class="col-md-4 col-form-label">
+                評分
+              </label>
+              <div class="col-md-8">
+                <input type="number" step="0.1" name="rating" class="form-control" id="rating" min="0" max="5" value="{{restaurant.rating}}">
+              </div>
+            </div>
+
+            <div class="row mb-3 g-2">
+              <label class="col-md-4 col-form-label">
+                地址
+              </label>
+              <div class="col-md-8">
+                <input type="text" placeholder="location" name="location" value="{{restaurant.location}}">
+              </div>
+            </div>
+
+            <div class="row mb-3 g-2">
+              <label class="col-md-4 col-form-label">
+                電話
+              </label>
+              <div class="col-md-8">
+                <input type="text" placeholder="phone" name="phone" value="{{restaurant.phone}}">
+              </div>
+            </div>
+
+            <div class="row mb-3 g-2">
+              <label class="col-md-4 col-form-label">
+                餐廳簡介
+              </label>
+              <div class="col-md-8">
+                <input type="text" placeholder="description" name="description" value="{{restaurant.description}}">
+              </div>
+            </div>
+
+
+
+            <button class="btn btn-success" type="submit">submit</button>
+            <a class="btn btn-success" href="/">Back</a>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

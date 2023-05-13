@@ -28,6 +28,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 // setting static files
 app.use(express.static('public'))
 
+// main page
 app.get('/', (req, res) => {
   Restaurant.find()
     .lean()
@@ -35,6 +36,7 @@ app.get('/', (req, res) => {
     .catch(error => console.log(error))
 })
 
+// create restaurants
 app.get('/restaurants/new', (req,res) => {
   return res.render('new')
 })
@@ -46,11 +48,38 @@ app.post('/restaurants', (req,res) => {
   .catch(error => console.log(error))
 })
 
+// read details
 app.get('/restaurants/:id', (req,res) => {
   const id = req.params.id
   return Restaurant.findById(id)
   .lean()
   .then(restaurant => res.render('detail', {restaurant}))
+  .catch(error => console.log(error))
+})
+
+// edit restaurant
+app.get('/restaurant/:id/edit', (req,res) => {
+  const id = req.params.id
+  return Restaurant.findById(id)
+  .lean()
+  .then(restaurant => res.render('edit', {restaurant}))
+  .catch(error => console.log(error))
+})
+
+app.post('/restaurants/:id/edit', (req,res) => {
+  const id = req.params.id
+  return Restaurant.findById(id)
+  .then(restaurant => {
+    restaurant.name = req.body.name
+    restaurant.category = req.body.category
+    restaurant.image = req.body.image
+    restaurant.rating = req.body.rating
+    restaurant.location = req.body.location
+    restaurant.phone = req.body.phone
+    restaurant.description = req.body.description
+    return restaurant.save()
+  })
+  .then(() => res.redirect('/'))
   .catch(error => console.log(error))
 })
 
